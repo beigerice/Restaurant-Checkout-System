@@ -37,7 +37,7 @@ var Cart = React.createClass({
       var total = 0;
 
       this.state.items.forEach(function(item, index) {
-        total += item.price;
+        total += item.price * item.quant;
       });
 
       this.setState({
@@ -55,7 +55,8 @@ var Cart = React.createClass({
             return (
               <li key={item.id} className="cart-item">
                 <span className="cart-item__name">{item.name}</span>
-                <span className="cart-item__price">{item.currency} {item.price}</span>
+                <span className="cart-item__quant">&times;{item.quant}</span>
+                <span className="cart-item__price">{item.currency} {item.price*item.quant}</span>
               </li>
             )
         });

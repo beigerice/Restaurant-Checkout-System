@@ -5,7 +5,7 @@ var ProductsList = React.createClass({
 
         var products = this.props.data.map(function(product) {
             return (
-              <li key={product.id}>
+              <li className="col-xs-6 col-md-4" key={product.id}>
                 <Product data={product} />
               </li>
             )
